@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e8d6b5" />
+    <meta
+      name="description"
+      content="YOUR VIEWS — a daily edition of the world's events, grouped across publishers. Every story, multiple perspectives, one place."
+    />
+    <title>YOUR VIEWS — The Daily Edition</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/unifrakturcook-normal-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/playfair-display-normal-600-900.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/im-fell-english-normal-400.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('yv-edition') || localStorage.getItem('yv-theme')
+          var night = stored === 'night' || stored === 'dark'
+          document.documentElement.classList.toggle('night', night)
+          document.documentElement.style.colorScheme = night ? 'dark' : 'light'
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

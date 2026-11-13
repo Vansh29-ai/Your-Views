@@ -1,0 +1,54 @@
+# Python / environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local data and secrets
+backend/data/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+credentials*
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/playwright-report/
+frontend/test-results/
+coverage/
+*.tsbuildinfo
+
+# Models / caches
+*.safetensors
+*.onnx
+*.pt
+*.pth
+.hf_cache/
+.cache/
+
+# Logs and OS noise
+*.log
+.pip-install.log
+qa-final.txt
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/

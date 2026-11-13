@@ -1,0 +1,191 @@
+{
+  "version": 2,
+  "updated_at": "2026-11-13",
+  "notes": "Centralised publisher + feed registry. Adding a publisher requires only a new entry here.",
+  "publishers": [
+    {
+      "id": "bbc",
+      "name": "BBC News",
+      "short_name": "BBC",
+      "homepage": "https://www.bbc.com/news",
+      "country": "GB",
+      "language": "en",
+      "tier": "public_service",
+      "accent": "#B80000",
+      "access": "rss",
+      "feeds": [
+        { "id": "bbc-world", "url": "https://feeds.bbci.co.uk/news/world/rss.xml", "category": "World" },
+        { "id": "bbc-business", "url": "https://feeds.bbci.co.uk/news/business/rss.xml", "category": "Business" },
+        { "id": "bbc-technology", "url": "https://feeds.bbci.co.uk/news/technology/rss.xml", "category": "Technology" },
+        { "id": "bbc-science", "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml", "category": "Science" }
+      ]
+    },
+    {
+      "id": "reuters",
+      "name": "Reuters",
+      "short_name": "Reuters",
+      "homepage": "https://www.reuters.com",
+      "country": "GB",
+      "language": "en",
+      "tier": "wire_service",
+      "accent": "#FF8000",
+      "access": "licensed_api",
+      "unavailable_reason": "Reuters retired its public RSS endpoints in 2024. Machine access requires a licensed Reuters Connect / Reuters News API subscription.",
+      "feeds": []
+    },
+    {
+      "id": "cnn",
+      "name": "CNN",
+      "short_name": "CNN",
+      "homepage": "https://edition.cnn.com",
+      "country": "US",
+      "language": "en",
+      "tier": "commercial",
+      "accent": "#CC0000",
+      "access": "rss",
+      "feeds": [
+        { "id": "cnn-world", "url": "http://rss.cnn.com/rss/edition_world.rss", "category": "World" },
+        { "id": "cnn-business", "url": "http://rss.cnn.com/rss/edition_business.rss", "category": "Business" },
+        { "id": "cnn-technology", "url": "http://rss.cnn.com/rss/edition_technology.rss", "category": "Technology" }
+      ]
+    },
+    {
+      "id": "guardian",
+      "name": "The Guardian",
+      "short_name": "Guardian",
+      "homepage": "https://www.theguardian.com",
+      "country": "GB",
+      "language": "en",
+      "tier": "commercial",
+      "accent": "#005689",
+      "access": "rss",
+      "feeds": [
+        { "id": "guardian-world", "url": "https://www.theguardian.com/world/rss", "category": "World" },
+        { "id": "guardian-business", "url": "https://www.theguardian.com/business/rss", "category": "Business" },
+        { "id": "guardian-technology", "url": "https://www.theguardian.com/technology/rss", "category": "Technology" }
+      ]
+    },
+    {
+      "id": "npr",
+      "name": "NPR",
+      "short_name": "NPR",
+      "homepage": "https://www.npr.org",
+      "country": "US",
+      "language": "en",
+      "tier": "public_service",
+      "accent": "#2C6E9B",
+      "access": "rss",
+      "feeds": [
+        { "id": "npr-world", "url": "https://feeds.npr.org/1004/rss.xml", "category": "World" },
+        { "id": "npr-business", "url": "https://feeds.npr.org/1006/rss.xml", "category": "Business" },
+        { "id": "npr-technology", "url": "https://feeds.npr.org/1019/rss.xml", "category": "Technology" }
+      ]
+    },
+    {
+      "id": "aljazeera",
+      "name": "Al Jazeera",
+      "short_name": "Al Jazeera",
+      "homepage": "https://www.aljazeera.com",
+      "country": "QA",
+      "language": "en",
+      "tier": "commercial",
+      "accent": "#FAB915",
+      "access": "rss",
+      "feeds": [
+        { "id": "aljazeera-all", "url": "https://www.aljazeera.com/xml/rss/all.xml", "category": "World" }
+      ]
+    },
+    {
+      "id": "dw",
+      "name": "Deutsche Welle",
+      "short_name": "DW",
+      "homepage": "https://www.dw.com/en/",
+      "country": "DE",
+      "language": "en",
+      "tier": "public_service",
+      "accent": "#0098DB",
+      "access": "rss",
+      "feeds": [
+        { "id": "dw-world", "url": "https://rss.dw.com/rdf/rss-en-world", "category": "World" },
+        { "id": "dw-business", "url": "https://rss.dw.com/rdf/rss-en-bus", "category": "Business" }
+      ]
+    },
+    {
+      "id": "thehindu",
+      "name": "The Hindu",
+      "short_name": "The Hindu",
+      "homepage": "https://www.thehindu.com",
+      "country": "IN",
+      "language": "en",
+      "tier": "commercial",
+      "accent": "#1A4F8A",
+      "access": "rss",
+      "feeds": [
+        { "id": "thehindu-international", "url": "https://www.thehindu.com/news/international/feeder/default.rss", "category": "World" },
+        { "id": "thehindu-business", "url": "https://www.thehindu.com/business/feeder/default.rss", "category": "Business" }
+      ]
+    },
+    {
+      "id": "indiatoday",
+      "name": "India Today",
+      "short_name": "India Today",
+      "homepage": "https://www.indiatoday.in",
+      "country": "IN",
+      "language": "en",
+      "tier": "commercial",
+      "accent": "#E63A24",
+      "access": "rss",
+      "feeds": [
+        { "id": "indiatoday-top", "url": "https://www.indiatoday.in/rss/home", "category": "World" },
+        { "id": "indiatoday-world", "url": "https://www.indiatoday.in/rss/1206550", "category": "World" }
+      ]
+    },
+    {
+      "id": "abc",
+      "name": "ABC News",
+      "short_name": "ABC",
+      "homepage": "https://abcnews.go.com",
+      "country": "US",
+      "language": "en",
+      "tier": "commercial",
+      "accent": "#1B5FA8",
+      "access": "rss",
+      "feeds": [
+        { "id": "abc-international", "url": "https://abcnews.go.com/abcnews/internationalheadlines", "category": "World" },
+        { "id": "abc-politics", "url": "https://abcnews.go.com/abcnews/politicsheadlines", "category": "Politics" },
+        { "id": "abc-technology", "url": "https://abcnews.go.com/abcnews/technologyheadlines", "category": "Technology" }
+      ]
+    },
+    {
+      "id": "cbc",
+      "name": "CBC News",
+      "short_name": "CBC",
+      "homepage": "https://www.cbc.ca/news",
+      "country": "CA",
+      "language": "en",
+      "tier": "public_service",
+      "accent": "#E60505",
+      "access": "rss",
+      "feeds": [
+        { "id": "cbc-world", "url": "https://www.cbc.ca/webfeed/rss/rss-world", "category": "World", "timeout": 45 },
+        { "id": "cbc-business", "url": "https://www.cbc.ca/webfeed/rss/rss-business", "category": "Business", "timeout": 45 },
+        { "id": "cbc-technology", "url": "https://www.cbc.ca/webfeed/rss/rss-technology", "category": "Technology", "timeout": 45 }
+      ]
+    },
+    {
+      "id": "france24",
+      "name": "France 24",
+      "short_name": "France 24",
+      "homepage": "https://www.france24.com/en/",
+      "country": "FR",
+      "language": "en",
+      "tier": "public_service",
+      "accent": "#0C4DA2",
+      "access": "rss",
+      "feeds": [
+        { "id": "france24-all", "url": "https://www.france24.com/en/rss", "category": "World" },
+        { "id": "france24-business", "url": "https://www.france24.com/en/business/rss", "category": "Business" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+services:
+  yourviews:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yourviews:latest
+    container_name: yourviews
+    ports:
+      - "8000:8000"
+    environment:
+      YV_ENVIRONMENT: production
+      YV_DATABASE_URL: sqlite:////data/yourviews.db
+      YV_CORS_ORIGINS: http://localhost:8000
+      YV_ENABLE_SCHEDULER: "true"
+      YV_INGEST_ON_STARTUP: "true"
+      YV_INGESTION_INTERVAL_MINUTES: "30"
+      YV_REQUEST_TIMEOUT_SECONDS: "30"
+      YV_STRONG_SIMILARITY: "0.70"
+      YV_WEAK_SIMILARITY: "0.58"
+      YV_LOG_LEVEL: INFO
+      # Optional hardening for write/admin endpoints:
+      # YV_ENABLE_INGEST_API_KEY: "true"
+      # YV_INGEST_API_KEY: change-me
+    volumes:
+      - yourviews-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 45s
+
+  # Optional PostgreSQL deployment. To use it:
+  #   1. uncomment this service
+  #   2. set YV_DATABASE_URL=postgresql+psycopg://yourviews:yourviews@postgres:5432/yourviews
+  #   3. add `psycopg[binary]` to backend/requirements.txt
+  #   4. run `init_db`/reindex once (FTS5 is SQLite-only; search falls back to LIKE)
+  #
+  # postgres:
+  #   image: postgres:16-alpine
+  #   environment:
+  #     POSTGRES_USER: yourviews
+  #     POSTGRES_PASSWORD: yourviews
+  #     POSTGRES_DB: yourviews
+  #   volumes:
+  #     - yourviews-pg:/var/lib/postgresql/data
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U yourviews"]
+  #     interval: 10s
+
+volumes:
+  yourviews-data:
+  # yourviews-pg:
